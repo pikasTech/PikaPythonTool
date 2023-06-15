@@ -45,7 +45,6 @@ Aside from the PikaPython device framework, PikaTestTool is also applicable to o
 Below is an example of using PikaTestTool to test GPIO:
 
 ``` python
-Copy code
 import PikaTestTool
 import PikaStdDevice
 
