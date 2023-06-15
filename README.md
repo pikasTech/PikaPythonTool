@@ -37,6 +37,8 @@ PikaTestTool 对 PikaPython 设备框架的贡献主要体现在以下几个方�
 对其他测试场景的拓展性
 除了针对 PikaPython 设备框架，PikaTestTool 也适用于其他需要进行硬件功能测试的场景。例如，你可以使用 PikaTestTool 来测试你的硬件设备是否正常工作，或者使用 PikaTestTool 来测试你的软件是否能正确驱动硬件设备。
 
+## 例子
+
 以下是一个使用 PikaTestTool 对 GPIO 进行测试的例子：
 
 ``` python
