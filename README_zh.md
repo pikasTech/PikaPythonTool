@@ -34,7 +34,8 @@ PikaTestTool 对 PikaPython 设备框架的贡献主要体现在以下几个方�
 
 促进开源社区发展：PikaTestTool 作为一个开源项目，不仅能帮助 PikaPython 设备框架的开发，也为其他开源项目提供了自动化测试的解决方案，促进了开源社区的发展。
 
-对其他测试场景的拓展性
+## 对其他测试场景的拓展性
+
 除了针对 PikaPython 设备框架，PikaTestTool 也适用于其他需要进行硬件功能测试的场景。例如，你可以使用 PikaTestTool 来测试你的硬件设备是否正常工作，或者使用 PikaTestTool 来测试你的软件是否能正确驱动硬件设备。
 
 ## 例子
