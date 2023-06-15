@@ -43,7 +43,6 @@ PikaTestTool 对 PikaPython 设备框架的贡献主要体现在以下几个方�
 以下是一个使用 PikaTestTool 对 GPIO 进行测试的例子：
 
 ``` python
-Copy code
 import PikaTestTool
 import PikaStdDevice
 
