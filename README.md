@@ -24,16 +24,17 @@ As a testing tool based on ESP32S3, PikaTestTool can automatically complete test
 
 Moreover, PikaTestTool is programmed using Python, enabling developers to quickly get started and swiftly write test cases. This not only improves development efficiency but also enhances code readability and maintainability.
 
-Contributions of PikaTestTool to PikaPython Device Framework
+## Contributions of PikaTestTool to PikaPython Device Framework
+
 The contributions of PikaTestTool to the PikaPython device framework are mainly manifested in the following aspects:
 
-Automated testing: PikaTestTool can automatically complete testing for all types of peripheral functionalities supported by the PikaPython device framework, significantly improving testing efficiency and saving manpower.
+- Automated testing: PikaTestTool can automatically complete testing for all types of peripheral functionalities supported by the PikaPython device framework, significantly improving testing efficiency and saving manpower.
 
-Continuous integration testing: PikaTestTool, programmed in Python and supporting Wifi connection, can trigger a complete automatic test of the actual hardware system whenever the PikaPython device framework is updated, ensuring continuous maintainability and deliverability of the software.
+- Continuous integration testing: PikaTestTool, programmed in Python and supporting Wifi connection, can trigger a complete automatic test of the actual hardware system whenever the PikaPython device framework is updated, ensuring continuous maintainability and deliverability of the software.
 
-Improving software quality: Comprehensive testing by PikaTestTool guarantees the stability and reliability of the PikaPython device framework, reducing product issues due to software defects.
+- Improving software quality: Comprehensive testing by PikaTestTool guarantees the stability and reliability of the PikaPython device framework, reducing product issues due to software defects.
 
-Promoting the development of the open-source community: As an open-source project, PikaTestTool not only aids in the development of the PikaPython device framework but also offers an automated testing solution for other open-source projects, thereby fostering the growth of the open-source community.
+- Promoting the development of the open-source community: As an open-source project, PikaTestTool not only aids in the development of the PikaPython device framework but also offers an automated testing solution for other open-source projects, thereby fostering the growth of the open-source community.
 
 ## Extensibility to Other Testing Scenarios
 
