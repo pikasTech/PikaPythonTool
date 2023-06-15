@@ -26,13 +26,13 @@ PikaTestTool 作为一款基于 ESP32S3 的测试工具，能够自动完成对 
 
 PikaTestTool 对 PikaPython 设备框架的贡献主要体现在以下几个方面：
 
-提供自动化测试：PikaTestTool 能自动完成对 PikaPython 设备框架支持的各种外设功能的测试，大大提高了测试效率，节省了人力资源。
+- 提供自动化测试：PikaTestTool 能自动完成对 PikaPython 设备框架支持的各种外设功能的测试，大大提高了测试效率，节省了人力资源。
 
-提供持续集成测试：PikaTestTool 通过 Python 语言进行编程，支持 Wifi 联网，每次对 PikaPython 设备框架进行更新时，都能触发实际硬件系统的全套自动测试，保证软件的持续可维护和持续可交付。
+- 提供持续集成测试：PikaTestTool 通过 Python 语言进行编程，支持 Wifi 联网，每次对 PikaPython 设备框架进行更新时，都能触发实际硬件系统的全套自动测试，保证软件的持续可维护和持续可交付。
 
-提高软件质量：PikaTestTool 的全面测试保证了 PikaPython 设备框架的稳定性和可靠性，降低了因为软件缺陷导致的产品问题。
+- 提高软件质量：PikaTestTool 的全面测试保证了 PikaPython 设备框架的稳定性和可靠性，降低了因为软件缺陷导致的产品问题。
 
-促进开源社区发展：PikaTestTool 作为一个开源项目，不仅能帮助 PikaPython 设备框架的开发，也为其他开源项目提供了自动化测试的解决方案，促进了开源社区的发展。
+- 促进开源社区发展：PikaTestTool 作为一个开源项目，不仅能帮助 PikaPython 设备框架的开发，也为其他开源项目提供了自动化测试的解决方案，促进了开源社区的发展。
 
 ## 对其他测试场景的拓展性
 
