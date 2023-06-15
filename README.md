@@ -1,74 +1,76 @@
 # PikaTestTool
 
-PikaTestTool 是一个针对 PikaPython 设备框架的软硬件测试系统，通过 ESP32S3 主控芯片与被测板卡串口连接，可以测试和验证支持 PikaPython 的板卡的外设功能，如 GPIO、UART、IIC、SPI、CAN 等以及 Wifi、BLE、Modbus 等协议栈。PikaTestTool 提供 Python 模块，开发者可以方便地调用 PikaTestTool 的测试功能。
+[中文页](README_zh.md)
 
-## 背景
+PikaTestTool is a software and hardware testing system designed for the PikaPython device framework. Connected to the test board via the ESP32S3 main control chip, it can test and validate peripheral functions of boards that support PikaPython, such as GPIO, UART, IIC, SPI, CAN, as well as Wifi, BLE, Modbus protocol stacks, and more. PikaTestTool provides a Python module, allowing developers to easily utilize its testing capabilities.
 
-在软件工程中，单元测试是确保代码质量的关键一环。忽视单元测试可能导致许多在单元级别就可以发现和解决的问题在系统集成时才暴露出来，给项目带来致命打击。在复杂的软件系统中，单元测试的重要性更为显现，它能保证软件的可用性、可重构性、可维护性等关键能力，为软件的稳健发展提供保障。
+## Background
 
-PikaPython 作为一款重新设计的嵌入式 Python 解释器，依赖于单元测试技术来提升软件稳定性，提高交付可靠性并支持快速迭代。例如，在每次新功能的添加、bug修复或者性能优化后，都需要通过单元测试来验证修改的正确性以及是否影响到了其他部分的功能。
+In software engineering, unit testing is a key aspect in ensuring code quality. Ignoring unit testing may lead to many issues, that could have been identified and resolved at the unit level, becoming exposed only during system integration—potentially causing critical setbacks to the project. In complex software systems, the importance of unit testing becomes even more apparent as it assures crucial abilities like software usability, refactorability, maintainability, and more, thereby providing stability for software development.
 
-在嵌入式领域，外设测试是一大挑战。外设的功能通常不能直接从主控读取结果进行验证，而需要借助于实际的硬件设备。而传统的硬件设备，如示波器、逻辑分析仪等，其自动化程度低，导致维护成本急剧升高，如果每次都需要手动进行驱动测试，将严重降低开发效率。
+As a redesigned embedded Python interpreter, PikaPython relies on unit testing techniques to enhance software stability, increase the reliability of delivery, and support rapid iteration. For instance, after each addition of new features, bug fixes, or performance optimization, unit tests are needed to validate the correctness of the modifications and whether they affect other parts' functionalities.
 
-此外，在涉及到外设适配的系统的迭代中，如驱动适配的迭代、驱动框架的迭代、Python解释器的迭代、主控SDK的迭代，每个环节都有可能影响到系统外设驱动的可用性。随着驱动体量的增大，对于一个没有大量资金和固定员工的开源项目来说，每次迭代进行完整的手工测试已经变得不现实。
+In the field of embedded systems, testing peripheral functionality poses a significant challenge. The functions of peripherals generally can't be verified directly from the main control and often require the aid of actual hardware devices. Traditional hardware devices, like oscilloscopes and logic analyzers, offer low levels of automation, leading to a steep increase in maintenance costs. If manual driver testing is needed every time, it will drastically lower development efficiency.
 
-针对上述问题，我们迫切需要一个更自动化、高度定制的测试方案。PikaTestTool 正是为此而生。
+Moreover, during system iteration that involves peripheral adaptation—like driver adaptation iteration, driver framework iteration, Python interpreter iteration, and main control SDK iteration—each link could potentially affect the usability of the system peripheral driver. As the driver volume increases, manual testing for each iteration becomes unrealistic for an open-source project without substantial funding and a stable workforce.
 
-## 项目的必要性
+In light of these problems, an automated, highly customizable testing solution is urgently needed. PikaTestTool was created to meet this demand.
 
-在嵌入式系统开发中，尤其是在涉及到外设适配的系统迭代中，每次迭代都需要进行大量的手动测试，这既耗时又耗人力。而 PikaTestTool 的出现，将大大减轻开发者的负担，提高测试效率，帮助开发者更快地进行产品迭代。
+## Necessity of the Project
 
-PikaTestTool 作为一款基于 ESP32S3 的测试工具，能够自动完成对 PikaPython 设备框架支持的各种外设功能的测试。这包括 GPIO、UART、IIC、SPI、CAN 等通信接口的测试，以及 Wifi、BLE、Modbus 等协议栈的测试。这大大提高了开发效率，并使得每次软件更新后都能进行全面的测试，确保软件的稳定性和可靠性。
+In the development of embedded systems, especially in system iterations that involve peripheral adaptation, each iteration requires a large amount of manual testing. This process is not only time-consuming but also labor-intensive. The emergence of PikaTestTool will greatly alleviate the burden of developers, improve testing efficiency, and assist developers in faster product iteration.
 
-此外，PikaTestTool 采用 Python 进行编程，使得开发者可以快速上手，快速编写测试用例。这不仅提高了开发效率，还提高了代码的可读性和可维护性。
+As a testing tool based on ESP32S3, PikaTestTool can automatically complete testing for all kinds of peripheral functionalities supported by the PikaPython device framework. This includes testing communication interfaces like GPIO, UART, IIC, SPI, CAN, as well as protocol stacks like Wifi, BLE, Modbus. This greatly improves development efficiency and ensures comprehensive testing after each software update, securing software stability and reliability.
 
-## PikaTestTool 对 PikaPython 设备框架的贡献
+Moreover, PikaTestTool is programmed using Python, enabling developers to quickly get started and swiftly write test cases. This not only improves development efficiency but also enhances code readability and maintainability.
 
-PikaTestTool 对 PikaPython 设备框架的贡献主要体现在以下几个方面：
+Contributions of PikaTestTool to PikaPython Device Framework
+The contributions of PikaTestTool to the PikaPython device framework are mainly manifested in the following aspects:
 
-提供自动化测试：PikaTestTool 能自动完成对 PikaPython 设备框架支持的各种外设功能的测试，大大提高了测试效率，节省了人力资源。
+Automated testing: PikaTestTool can automatically complete testing for all types of peripheral functionalities supported by the PikaPython device framework, significantly improving testing efficiency and saving manpower.
 
-提供持续集成测试：PikaTestTool 通过 Python 语言进行编程，支持 Wifi 联网，每次对 PikaPython 设备框架进行更新时，都能触发实际硬件系统的全套自动测试，保证软件的持续可维护和持续可交付。
+Continuous integration testing: PikaTestTool, programmed in Python and supporting Wifi connection, can trigger a complete automatic test of the actual hardware system whenever the PikaPython device framework is updated, ensuring continuous maintainability and deliverability of the software.
 
-提高软件质量：PikaTestTool 的全面测试保证了 PikaPython 设备框架的稳定性和可靠性，降低了因为软件缺陷导致的产品问题。
+Improving software quality: Comprehensive testing by PikaTestTool guarantees the stability and reliability of the PikaPython device framework, reducing product issues due to software defects.
 
-促进开源社区发展：PikaTestTool 作为一个开源项目，不仅能帮助 PikaPython 设备框架的开发，也为其他开源项目提供了自动化测试的解决方案，促进了开源社区的发展。
+Promoting the development of the open-source community: As an open-source project, PikaTestTool not only aids in the development of the PikaPython device framework but also offers an automated testing solution for other open-source projects, thereby fostering the growth of the open-source community.
 
-对其他测试场景的拓展性
-除了针对 PikaPython 设备框架，PikaTestTool 也适用于其他需要进行硬件功能测试的场景。例如，你可以使用 PikaTestTool 来测试你的硬件设备是否正常工作，或者使用 PikaTestTool 来测试你的软件是否能正确驱动硬件设备。
+## Extensibility to Other Testing Scenarios
 
-## 例子
+Aside from the PikaPython device framework, PikaTestTool is also applicable to other scenarios that require hardware functionality testing. For example, you can use PikaTestTool to test whether your hardware device is working properly, or use PikaTestTool to test if your software can correctly drive hardware devices.
 
-以下是一个使用 PikaTestTool 对 GPIO 进行测试的例子：
+## Example
+
+Below is an example of using PikaTestTool to test GPIO:
 
 ``` python
 Copy code
 import PikaTestTool
 import PikaStdDevice
 
-# 通过串口 3 连接到 PikaTestTool
+# Connect to PikaTestTool via UART 3
 PikaTestTool.connect(mode = 'UART', id = 3)
 
-# 初始化一个 GPIO 对象
+# Initialize a GPIO object
 test_io = PikaStdDevice.GPIO()
 
-# 设置 GPIO 引脚和模式
+# Set GPIO pin and mode
 test_io.setPin('PA1')
 test_io.setMode('out')
 
-# 启用 GPIO
+# Enable GPIO
 test_io.enable()
 
-# 设置 GPIO 输出高电平，然后读取 GPIO 值，确认为高电平
+# Set GPIO to output a high level, then read the GPIO value, and verify it's high
 test_io.high()
 test_tool_io_number = 1
 tested_value = PikaTestTool.read_gpio_value(test_tool_io_number)
 assert tested_value == 1
 
-# 设置 GPIO 输出低电平，然后读取 GPIO 值，确认为低电平
+# Set GPIO to output a low level, then read the GPIO value, and verify it's low
 test_io.low()
 tested_value = PikaTestTool.read_gpio_value(test_tool_io_number)
 assert tested_value == 0
 ```
 
-在这个例子中，我们首先创建了一个 GPIO 对象，并设置了其引脚和模式。然后，我们启用了这个 GPIO，设置其输出高电平，并读取了 GPIO 的值，确认其为高电平。接着，我们设置 GPIO 输出低电平，并读取了 GPIO 的值，确认其为低电平。这个例子清晰地展示了如何使用 PikaTestTool 进行硬件功能的测试。
+In this example, we first create a GPIO object and set its pin and mode. Then, we enable this GPIO, set it to output a high level, read the GPIO value, and verify it's high. Afterward, we set the GPIO to output a low level, read the GPIO value, and verify it's low. This example clearly demonstrates how to use PikaTestTool for hardware functionality testing.
